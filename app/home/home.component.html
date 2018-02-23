@@ -1,0 +1,16 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Home"></Label>
+</ActionBar>
+
+<StackLayout>
+        <Label (tap)="onTap()" text="Click me!" ></Label>
+        <TextField autocorrect="false" hint="Write here!!! :P" [(ngModel)]="textfieldtext"></TextField>
+        <Label (tap)="clear()" text="Clear" ></Label>
+        <ListView *ngIf="users" [items]="users">
+            <ng-template let-item="item">
+              <StackLayout>
+                <Label [text]="item.name" ></Label>
+              </StackLayout>
+            </ng-template>
+        </ListView>
+</StackLayout>
